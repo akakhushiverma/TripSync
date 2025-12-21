@@ -1,0 +1,83 @@
+/* Card Layouts */
+.info-card {
+  background: #222222;
+  border-radius: 15px;
+  padding: 15px; /* Reduced padding */
+  border: 1px solid #333;
+  transition: 0.3s;
+}
+
+/* Hotel Card Specifics */
+.hotel-card {
+  display: flex;
+  flex-direction: row; /* Align side by side */
+  gap: 20px;
+  align-items: center;
+}
+
+.hotel-main-img {
+  width: 180px;  /* Smaller fixed width */
+  height: 120px; /* Smaller fixed height */
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0; /* Prevents image from squishing */
+}
+
+/* Event Card Specifics */
+.event-card {
+  display: flex;
+  flex-direction: row; /* Align side by side */
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.event-img {
+  width: 120px;  /* Compact width */
+  height: 100px; /* Compact height */
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.event-info, .hotel-details {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.description {
+  font-size: 0.85rem; /* Smaller text for compact look */
+  opacity: 0.8;
+  margin: 5px 0;
+  line-height: 1.3;
+}
+
+/* Flight Logo Sizing */
+.airline-logo {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  background: white;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+/* Scroll Fix (Apply to Container) */
+.itenary-container {
+  min-height: 100vh;
+  height: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* ... existing background styles ... */
+}
+.trip-title{
+  color: bisque;
+
+}
+.trip-dates{
+  color: bisque;
+}

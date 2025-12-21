@@ -1,0 +1,159 @@
+/* Page Wrapper */
+.background-containerr {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background: rgb(43, 39, 39);
+  overflow-x: hidden;
+}
+
+.background-containerr::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.background-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 100px 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Grid System */
+.travel-grid {
+  width: 90%;
+  max-width: 1500px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* Card Styling */
+.travel-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  flex-direction: column;
+}
+
+.travel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Sharpening Container */
+.card-image-wrapper {
+  width: 100%;
+  height: 220px; /* Increased height as requested */
+  overflow: hidden;
+  position: relative;
+  background: #222;
+  /* Hardware acceleration trigger */
+  transform: translateZ(0);
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  
+  /* SHARPNESS FIXES */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform; /* Prepares GPU for movement to keep it sharp */
+}
+
+.travel-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Overlay for better text contrast */
+.card-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.4));
+  pointer-events: none;
+}
+
+/* Details Section */
+.card-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-category {
+  color: #9a5db8;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.card-location {
+  color: white;
+  font-size: 1.25rem;
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.card-desc {
+  color: #ccc;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Actions */
+.event-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.ticket-link, .explore-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+.ticket-link {
+  color: #9a5db8;
+  border: 1px solid #9a5db8;
+}
+
+.explore-btn {
+  background: #735582;
+  color: white;
+  border: none;
+}
+
+.explore-btn:hover { background: #9a5db8; }
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) { .travel-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) { .travel-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .travel-grid { grid-template-columns: 1fr; } }

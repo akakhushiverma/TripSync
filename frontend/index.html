@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TripSync</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Dialogflow Messenger Script -->
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+    <!-- Chatbot Element -->
+    <df-messenger
+      intent="WELCOME"
+      chat-title="TripSync Assistant"
+      agent-id="b768ba37-be87-4c51-94e9-cda9e83a1288"
+      language-code="en"
+    ></df-messenger>
+
+    <script type="module" src="/src/main.jsx"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  </body>
+</html>

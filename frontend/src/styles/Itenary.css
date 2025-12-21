@@ -1,0 +1,119 @@
+/* Container */
+.itenary-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 60px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgb(58, 53, 58);
+}
+
+.itenary-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/itenary.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* Header */
+.itenary-header {
+  
+  margin-top: 50px;
+  font-size: 3rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+  z-index: 2;
+  top: 10px;
+  position: absolute;
+  
+
+}
+
+/* Content wrapper */
+.itenary-content {
+  top:100px;
+  position: absolute;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: rgba(110, 79, 126, 0.5);
+  border-radius: 2%;
+  z-index: 2;
+  color: white;
+}
+
+/* Grid for day cards */
+.tiles-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns */
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .tiles-grid {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+}
+
+/* Individual day card */
+.day-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 14px;
+  background-color: rgba(220, 220, 220, 0.1);
+  color: #fff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.day-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Optional colored labels inside day cards */
+.tile-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Buttons if needed */
+.button-p {
+  background-color: rgba(82, 30, 98, 0.9);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem 1.6rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.8);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.button-p:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+}
+.view-itinerary-btn{
+  margin-left: 500px;
+  background-color: bisque;
+  color: black;
+}

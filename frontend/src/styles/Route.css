@@ -1,0 +1,39 @@
+.page-wrapper {
+ background-color: #121212;
+  min-height: 100vh; /* Ensures the background covers the whole page */
+  display: flex;
+   width: 100vw;
+}
+
+/* MAIN PAGE SECTION */
+.route-page {
+ flex: 1;
+  padding-top: 100px; /* Adjust this value based on your Nav's height */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  color: white;
+}
+
+/* HEADER STYLING */
+.route-header {
+  text-align: center;
+  
+  margin-bottom: 1rem;
+  width:1200px;
+  margin-left: 100px;
+  color: #121212;
+  background: bisque;
+  border-radius: 12px;
+}
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.route-map {
+  width: 900px;
+  height: 500px;   /* REQUIRED */
+  border-radius: 12px;
+  overflow: hidden;
+}
