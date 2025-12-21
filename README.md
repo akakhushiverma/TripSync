@@ -87,3 +87,11 @@ Planning a trip no longer needs to mean juggling tabs, comparing data manually, 
 - MongoDB Atlas account
 - Firebase project (for Auth)
 - API keys for:
+  PORT=3000
+  SERPAPI_KEY=
+  JWT_PASSWORD=
+   OPENROUTE_KEY=
+  GOOGLE_CLIENT_ID=
+  GOOGLE_CLIENT_SECRET=
+  GOOGLE_REDIRECT_URI=
+  
