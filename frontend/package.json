@@ -17,6 +17,7 @@
     "firebase": "^12.3.0",
     "leaflet": "^1.9.4",
     "react": "^19.1.1",
+    "react-chatbot-kit": "^2.2.2",
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.64.0",
     "react-leaflet": "^5.0.0",

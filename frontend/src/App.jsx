@@ -12,10 +12,11 @@ import Events from "./pages/Events";
 import Hotels from "./pages/Hotels";
 import ItenaryCard from "./pages/ItenaryCard";
 import MyItineraries from "./pages/MyItineraries";
-
+import ChatbotWidget from "./components/Chatbot/ChatbotWidget";
 export default function App() {
   return (
     <div>
+      <ChatbotWidget />
       <Routes>
         
         <Route path="/" element={<Dashboard />} />

@@ -8,6 +8,7 @@ import axios from "axios"
 import { ItenaryModel } from "./db.js";
 import {UserModel} from "./db.js"; // note the .js extension
 import { google } from "googleapis";
+import chatbotRoutes from "./routes/chatbot.js";
 
 dotenv.config();
 // ---------------- Express App ----------------
@@ -89,7 +90,7 @@ app.post("/register", async (req, res) => {
     res.status(500).json({ status: "Server error", error: err.message });
   }
 });
-
+app.use("/api/chatbot", chatbotRoutes);
 // ---------------- SIGNIN ----------------
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
