@@ -1,47 +1,87 @@
-# 🌍✈️ TripSync — Smart Agent-Based Travel Planning Platform
+# TripSync: Plan. Compare. Travel.
 
-## 📝 Description
+## ~ Vision
 
-TripSync is a full-stack travel planning platform that uses an **agent-based architecture** to collaboratively generate personalized itineraries. Instead of switching between multiple apps, users plan an entire trip in one place — weather, routes, flights, hotels, events, and budgeting.
+TripSync is a smart, agent-based travel planning platform that brings together all essential travel components — weather, routes, flights, hotels, events, and budgeting — into a single, seamless experience. Instead of switching between multiple apps, users plan an entire trip in one place with intelligent agents working collaboratively to generate personalized itineraries.
 
-The platform features a **Multi-Agent Orchestrator** that coordinates 5 independent agents (Weather, Route, Flight, Hotel, Events) to work in parallel, and includes **Trekky 🤖** — a rule-based NLP chatbot built without any paid AI APIs.
+## ~ Highlights
 
----
+### 1. Multi-Agent Orchestration
+Five independent agents (Weather, Route, Flight, Hotel, Events) run in parallel with a live status dashboard, coordinating to build your complete itinerary automatically.
 
-## 🚀 Features
+### 2. Smart Calendar Integration
+Sync your planned events directly to Google Calendar with automatic reminders (1-hour popup + 1-day email notification) via OAuth2.
 
-### Basic Features ✅
-- **Web-based Dashboard** — Travel inspiration cards, search & filter
-- **Weather Agent** — 5-day forecast for trip dates via OpenWeatherMap
-- **Trip Summary Card** — Displays weather + flights + hotel + budget in a card
-- **Budget Estimation** — Full cost breakdown (flights + hotel × nights = total)
-- **Day-wise Itinerary** — Auto-generated (Day 1: Arrival, Day 2-N: Events/Sightseeing, Last Day: Departure)
+### 3. Destination Comparison Engine
+Compare two destinations side-by-side on weather, hotel pricing, and event availability — with an intelligent verdict recommending the better choice.
 
-### Intermediate Features ✅
-- **Multi-Agent Orchestration** — All 5 agents run in parallel with live status UI
-- **Event Recommendations** — Concerts, festivals, sports during trip dates
-- **Smart Calendar Integration** — Google Calendar sync with automatic reminders (1hr popup + 1 day email)
-- **Comparison Mode** — Compare two destinations side-by-side (weather, hotels, events, verdict)
+### 4. Day-wise Itinerary Generation
+Auto-generates a structured day-by-day plan: Day 1 (Arrival), Day 2–N (Events/Sightseeing), Last Day (Departure) — with weather forecasts per day.
 
-### Advanced Features ✅
-- **Orchestrator Endpoint** (`/api/orchestrate`) — MCP-style unified response from all agents
-- **Budget Optimizer** — "💰 Best Value" badge on cheapest flights, "🏆 Best Deal" on best-rated affordable hotels
+### 5. Budget Optimizer
+Highlights "Best Value" flights and "Best Deal" hotels. Provides a full cost breakdown: flights + hotel × nights = total estimated cost.
 
-### Bonus Features
-- **Forgot Password** — Email OTP verification via Nodemailer
-- **AI Chatbot (Trekky)** — Rule-based NLP with 10+ intents, calls live APIs
-- **Google OAuth** — Calendar event sync
-- **Logout** — Session management
+### 6. AI-like Chatbot (Trekky)
+Rule-based NLP chatbot built with compromise.js — supports 10+ intents including trip planning, comparisons, weather, flights, hotels, events, distance, and chitchat. Calls live APIs for real-time data. Zero cost, zero hallucinations.
 
----
+### 7. Secure Authentication
+JWT-based login with bcrypt password hashing. Forgot Password flow with email OTP verification via Nodemailer.
 
-## 🤖 Chatbot — Trekky
+## ~ Why It Matters
 
-Rule-based NLP chatbot built with `compromise` library. No paid AI APIs.
+**Problems Solved:**
+- Switching between 5+ apps to plan a single trip is time-consuming
+- No unified view of flights, hotels, events, and weather together
+- Manual budget tracking leads to overspending
+- Forgetting event dates without calendar sync
 
-### Supported Queries:
-| Intent | Example |
-|--------|---------|
+**Our Purpose:**
+We aim to simplify travel planning by providing:
+- Agent-based architecture for parallel data fetching
+- Unified itinerary with all bookings in one card
+- Budget visibility before you travel
+- Google Calendar sync so you never miss an event
+
+## ~ Tech Stack
+
+| Layer | Technologies |
+|-------|-------------|
+| Frontend | React 19, Vite, Tailwind CSS, React Router v6, React Leaflet, react-chatbot-kit, Axios |
+| Backend | Node.js, Express.js, MongoDB (Mongoose), JWT, bcrypt, Nodemailer, compromise (NLP), googleapis |
+| APIs | OpenWeatherMap, SerpAPI (Google Flights, Hotels, Events), OpenRouteService, Google Calendar API |
+| Tools | Nodemon, dotenv |
+
+## ~ Features
+
+| Category | Feature |
+|----------|---------|
+| Basic | Web Dashboard, Weather Agent, Trip Summary Card, Budget Breakdown, Day-wise Itinerary |
+| Intermediate | Multi-Agent Orchestration, Event Recommendations, Google Calendar Sync + Reminders, Comparison Mode |
+| Advanced | MCP-style Orchestrator Endpoint (`/api/orchestrate`), Budget Optimizer (Best Value/Deal badges) |
+| Bonus | Chatbot (Trekky), Forgot Password (Email OTP), Google OAuth, Route Visualization, Multiple Itineraries, Profile Management |
+
+## ~ Process Flow
+
+```
+1. Register / Login (JWT + Email OTP for password reset)
+         |
+2. Dashboard (Browse travel inspiration, search destinations)
+         |
+3. Trip Planner (Enter source, destination, dates, budget)
+         |
+4. Agent Orchestration (5 agents run in parallel with live status)
+         |
+5. Select Flights / Hotels / Events (with Best Value badges)
+         |
+6. Final Itinerary Card (Day-wise plan + Budget + Weather + Bookings)
+         |
+7. Google Calendar Sync (Events added with reminders)
+```
+
+## ~ Chatbot — Trekky
+
+| Intent | Example Query |
+|--------|--------------|
 | Plan Trip | "Plan my trip to Goa" |
 | Compare | "Compare Mumbai and Delhi" |
 | Weather | "Weather in Jaipur" |
@@ -51,117 +91,115 @@ Rule-based NLP chatbot built with `compromise` library. No paid AI APIs.
 | Distance | "Distance between Delhi and Agra" |
 | Chitchat | "hi", "help", "tell me a joke", "best place to visit" |
 
----
+Built with compromise.js for NLP — no paid AI APIs. Returns live data from real APIs.
 
-## 🛠️ Tech Stack
+## ~ Getting Started
 
-### Frontend
-- React 19 + Vite
-- Tailwind CSS + Custom CSS
-- React Router v6
-- React Leaflet (maps)
-- react-chatbot-kit
-- Axios
+Follow these steps to run the project locally:
 
-### Backend
-- Node.js + Express
-- MongoDB (Mongoose)
-- JWT Authentication + bcrypt
-- Nodemailer (email OTP)
-- compromise (NLP)
-- googleapis (Calendar)
+### 1. Clone the repository
 
-### APIs Used
-| API | Purpose |
-|-----|---------|
-| OpenWeatherMap | Weather forecasts |
-| SerpAPI | Flights, Hotels, Events, Map Directions |
-| OpenRouteService | Route calculation + Geocoding |
-| Google Calendar API | Event sync with reminders |
-| Gmail (Nodemailer) | Password reset OTP |
+```bash
+git clone https://github.com/akakhushiverma/TripSync.git
+cd TripSync
+```
 
----
+### 2. Backend Setup
 
-## 🔁 Process Flow
-
-1. **Register/Login** — JWT auth with email OTP password reset
-2. **Dashboard** — Browse travel inspiration, search destinations
-3. **Trip Planner** — Enter source, destination, dates, budget
-4. **Agent Orchestration** — 5 agents work in parallel with live status
-5. **Individual Agents** — Pick flights, hotels, events for your trip
-6. **Final Itinerary** — Day-wise plan + budget breakdown + weather + all bookings
-7. **Google Calendar Sync** — Events auto-added with reminders
-8. **Comparison Mode** — Compare destinations before deciding
-9. **Chatbot** — Quick answers for weather, flights, hotels, events
-
----
-
-## ⚙️ Setup
-
-### Prerequisites
-- Node.js v18+
-- MongoDB Atlas account
-- API keys (SerpAPI, OpenWeatherMap, OpenRouteService)
-- Gmail App Password (for email OTP)
-- Google Cloud OAuth credentials (for Calendar)
-
-### Backend
 ```bash
 cd backend
 npm install
-# Create .env file (see .env.example)
+```
+
+Create a `.env` file in the backend folder:
+
+```
+PORT=3000
+JWT_PASSWORD=your_jwt_secret
+
+SERPAPI_KEY=your_serpapi_key
+OPENWEATHER_API_KEY=your_openweather_key
+OPENROUTE_KEY=your_openroute_key
+
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_REDIRECT_URI=http://localhost:3000/api/google/callback
+
+EMAIL_USER=your_gmail@gmail.com
+EMAIL_PASS=your_gmail_app_password
+```
+
+Start the server:
+
+```bash
 node server.js
 ```
 
-### Frontend
+### 3. Frontend Setup
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-### Environment Variables (.env)
-```
-PORT=3000
-JWT_PASSWORD=your_secret
+### 4. Open the app
 
-SERPAPI_KEY=your_key
-OPENWEATHER_API_KEY=your_key
-OPENROUTE_KEY=your_key
+Visit `http://localhost:5173` to see the app in action.
 
-GOOGLE_CLIENT_ID=your_id
-GOOGLE_CLIENT_SECRET=your_secret
-GOOGLE_REDIRECT_URI=http://localhost:3000/api/google/callback
+## ~ API Keys Required
 
-EMAIL_USER=your_gmail@gmail.com
-EMAIL_PASS=your_app_password
-```
+| API | Free Tier | Get Key |
+|-----|-----------|---------|
+| SerpAPI | 100 searches/month | [serpapi.com](https://serpapi.com) |
+| OpenWeatherMap | 1000 calls/day | [openweathermap.org](https://openweathermap.org/api) |
+| OpenRouteService | 2000 calls/day | [openrouteservice.org](https://openrouteservice.org/dev/#/signup) |
+| Google Calendar | Free | [console.cloud.google.com](https://console.cloud.google.com) |
+| Gmail (Nodemailer) | Free | [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords) |
 
----
-
-## 📂 Project Structure
+## ~ Project Structure
 
 ```
-tripsync/
+TripSync/
 ├── backend/
-│   ├── server.js          # Main server (all routes)
-│   ├── db.js              # MongoDB schemas
+│   ├── server.js              # Main server with all routes
+│   ├── db.js                  # MongoDB schemas (User, Itinerary)
 │   ├── routes/
-│   │   └── chatbot.js     # Trekky NLP chatbot
-│   ├── .env
+│   │   └── chatbot.js         # Trekky NLP chatbot
+│   ├── .env                   # Environment variables (not committed)
 │   └── package.json
+│
 ├── frontend/
 │   ├── src/
-│   │   ├── pages/         # All page components
-│   │   ├── components/    # Nav, Chatbot, Carousel
-│   │   ├── styles/        # CSS files
-│   │   └── App.jsx        # Routes
+│   │   ├── pages/             # Dashboard, Planner, Flights, Hotels, Events,
+│   │   │                      # Weather, Route, Compare, Profile, Login,
+│   │   │                      # Itenary, ItenaryCard, MyItineraries
+│   │   ├── components/        # Nav, BannerCarousel, Chatbot/
+│   │   ├── styles/            # CSS for each page
+│   │   ├── App.jsx            # Route definitions
+│   │   └── main.jsx           # Entry point
 │   └── package.json
+│
+├── .gitignore
 └── readme.md
 ```
 
----
+## ~ Contributing
 
-## 👤 Author
+If you'd like to contribute to TripSync, we welcome your input:
+
+1. **Fork** the repository
+2. **Create** a new branch: `git checkout -b feature-name`
+3. **Commit** your changes: `git commit -m "Add feature description"`
+4. **Push** to the branch: `git push origin feature-name`
+5. **Submit** a Pull Request with a detailed description
+
+## ~ Author
 
 **Khushi Verma** — [@akakhushiverma](https://github.com/akakhushiverma)
+
+## ~ Languages
+
+- JavaScript — 75%
+- CSS — 24.5%
+- HTML — 0.5%
