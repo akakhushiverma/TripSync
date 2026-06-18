@@ -1,0 +1,169 @@
+/* ===== Itinerary Agent Selection Page ===== */
+
+.itn-page {
+  min-height: 100vh;
+  background: #0a0a0f;
+  padding-top: 110px;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.itn-page::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.itn-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+/* --- Hero Section --- */
+.itn-hero {
+  text-align: center;
+  width: 100%;
+  padding: 40px;
+  background: linear-gradient(145deg, rgba(30, 20, 40, 0.85), rgba(20, 15, 30, 0.9));
+  border: 1px solid rgba(154, 93, 184, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+}
+
+.itn-label {
+  color: #9a5db8;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.itn-destination {
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 8px 0 10px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.itn-dates {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* --- Agent Cards Grid --- */
+.itn-agents-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.itn-agent-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 25px;
+  background: rgba(25, 20, 35, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.itn-agent-card:hover {
+  border-color: rgba(154, 93, 184, 0.4);
+  background: rgba(154, 93, 184, 0.06);
+  transform: translateX(6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.agent-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #9a5db8, #6a3d7d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.agent-text {
+  flex: 1;
+}
+
+.agent-text h3 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 3px;
+}
+
+.agent-text p {
+  color: #777;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.agent-arrow {
+  color: #555;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.itn-agent-card:hover .agent-arrow {
+  color: #9a5db8;
+  transform: translateX(4px);
+}
+
+/* --- Final Button --- */
+.itn-final-btn {
+  background: linear-gradient(135deg, #9a5db8, #6a3d7d);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 40px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 25px rgba(154, 93, 184, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.itn-final-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 35px rgba(154, 93, 184, 0.5);
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .itn-hero { padding: 25px; }
+  .itn-destination { font-size: 2rem; }
+  .itn-agent-card { padding: 16px 18px; }
+  .agent-text p { display: none; }
+}

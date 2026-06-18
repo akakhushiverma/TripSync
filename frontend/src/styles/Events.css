@@ -1,0 +1,142 @@
+/* ===== Events Page ===== */
+
+/* Header */
+.events-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.events-subtitle {
+  color: #888;
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+.loading-text, .error-text {
+  color: #999;
+  font-size: 1rem;
+}
+
+/* --- Google Calendar Bar (subtle) --- */
+.gcal-bar {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.gcal-bar p {
+  color: #999;
+  font-size: 0.85rem;
+  margin: 0;
+  flex: 1;
+}
+
+.gcal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.gcal-dot.offline {
+  background: #ff6b6b;
+  box-shadow: 0 0 6px rgba(255, 107, 107, 0.4);
+}
+
+.gcal-dot.online {
+  background: #4caf50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.4);
+}
+
+.gcal-bar.connected {
+  border-color: rgba(76, 175, 80, 0.15);
+}
+
+.gcal-connect-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 7px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gcal-connect-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* --- Event Card Actions Row --- */
+.event-actions-row {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.ev-ticket-btn,
+.ev-itn-btn,
+.ev-cal-btn {
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.ev-ticket-btn {
+  color: #9a5db8;
+  border: 1px solid rgba(154, 93, 184, 0.4);
+  background: transparent;
+}
+
+.ev-ticket-btn:hover {
+  background: rgba(154, 93, 184, 0.1);
+}
+
+.ev-itn-btn {
+  background: linear-gradient(135deg, #9a5db8, #6a3d7d);
+  color: #fff;
+}
+
+.ev-itn-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(154, 93, 184, 0.3);
+}
+
+.ev-cal-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ev-cal-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .event-actions-row {
+    flex-direction: column;
+  }
+  .ev-ticket-btn, .ev-itn-btn, .ev-cal-btn {
+    width: 100%;
+  }
+}
